@@ -637,7 +637,7 @@ export interface ApiStatStat extends Struct.CollectionTypeSchema {
     singularName: 'stat';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
