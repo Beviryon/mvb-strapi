@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "realisations",
+  "info": {
+    "singularName": "realisation",
+    "pluralName": "realisations",
+    "displayName": "Realisation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "blocks",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Vente",
+        "Location",
+        "Constructeur"
+      ]
+    },
+    "statut": {
+      "type": "enumeration",
+      "required": true,
+      "default": "     Disponible",
+      "enum": [
+        "     Disponible",
+        "     Bientôt disponible",
+        "     Exclusivité",
+        "     Nouveau",
+        "     Vendu/Loué"
+      ]
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "     Villa",
+        "     Appartement",
+        "     Studio",
+        "     Terrain",
+        "     Commercial",
+        "     Bureau",
+        "     Autre"
+      ]
+    },
+    "surface": {
+      "type": "string"
+    },
+    "rooms": {
+      "type": "integer",
+      "min": 0
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "json"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "tags": {
+      "type": "json"
+    }
+  }
+}

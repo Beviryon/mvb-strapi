@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "excerpt": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
+    },
+    "content": {
+      "type": "blocks",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "default": "Équipe MVB",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "     Investissement",
+        "     Marché",
+        "     Conseils",
+        "     Actualités",
+        "     Légal",
+        "     Tendances"
+      ]
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "readTime": {
+      "type": "string",
+      "default": "5 min"
+    },
+    "tags": {
+      "type": "json"
+    },
+    "featured": {
+      "type": "boolean"
+    }
+  }
+}
